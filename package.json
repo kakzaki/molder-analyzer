@@ -1,0 +1,26 @@
+{
+  "name": "molder-analyzer",
+  "displayName": "Molder Analyzer",
+  "description": "Syntax highlighting extension for Molder templates",
+  "version": "0.0.1",
+  "author": "Zaki Mubarok (kakzaki.dev)",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "mold",
+      "aliases": ["Molder", "mold"],
+      "extensions": [".mold"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "mold",
+      "scopeName": "",
+      "path": "./syntaxes/mold.tmLanguage.json"
+    }]
+  }
+}

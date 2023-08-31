@@ -1,0 +1,44 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Molder",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"name": "meta.template.mustache",
+			"begin": "\\{\\{",
+			"end": "\\}\\}",
+			"patterns": [
+				{
+					"name": "variable.mustache",
+					"match": "\\w+"
+				}
+				// You can define more patterns for sections, expressions, etc.
+			]
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.mold",
+				"match": "\\b(if|while|for|return)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.mold",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.mold",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.molder"
+}
