@@ -4,6 +4,7 @@
   "description": "Syntax highlighting extension for Molder templates",
   "version": "0.0.1",
   "author": "Zaki Mubarok (kakzaki.dev)",
+  "publisher": "kakzaki.dev", 
   "repository": "https://github.com/kakzaki/molder-analyzer",
   "engines": {
     "vscode": "^1.81.0"
