@@ -6,13 +6,11 @@
 	"patterns": [
 	  {
 		"name": "keyword.control.mold",
-		"match": "\\b(if|while|for|return)\\b",
-		"scope": "keyword.control.mold" 
+		"match": "\\b(if|while|for|return)\\b"
 	  },
 	  {
 		"name": "keyword.other.mold",
-		"match": "\\b(final|static|public|private)\\b",
-		"scope": "keyword.other.mold" 
+		"match": "\\b(final|static|public|private)\\b"
 	  },
 	  {
 		"name": "string.quoted.double.mold",
@@ -21,8 +19,7 @@
 		"patterns": [
 		  {
 			"name": "constant.character.escape.mold",
-			"match": "\\\\.",
-			"scope": "constant.character.escape.mold" 
+			"match": "\\\\."
 		  }
 		]
 	  },
@@ -33,20 +30,28 @@
 		"patterns": [
 		  {
 			"name": "variable.mold.content",
-			"match": "\\w+",
-			"scope": "variable.mold.content" 
+			"match": "\\w+"
 		  }
 		]
 	  },
 	  {
+		"name": "keyword.class.mold",
+		"match": "\\bclass\\b"
+	  },
+	  {
 		"name": "entity.name.class.mold",
-		"match": "\\bclass\\s+\\w+\\b",
-		"scope": "entity.name.class.mold" 
+		"begin": "\\bclass\\s+{{className}}\\b",
+		"end": "\\{",
+		"patterns": [
+		  {
+			"name": "entity.name.class.mold.content",
+			"match": "\\w+"
+		  }
+		]
 	  },
 	  {
 		"name": "keyword.type.mold",
-		"match": "\\b(int|double|string|bool|List|Set|Map)\\b",
-		"scope": "keyword.type.mold" 
+		"match": "\\b(int|double|string|bool|List|Set|Map)\\b"
 	  }
 	],
 	"repository": {},
