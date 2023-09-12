@@ -2,43 +2,86 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Molder",
 	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"name": "meta.template.mustache",
-			"begin": "\\{\\{",
-			"end": "\\}\\}",
-			"patterns": [
-				{
-					"name": "variable.mustache",
-					"match": "\\w+"
-				}
-				// You can define more patterns for sections, expressions, etc.
-			]
-		}
+	  {
+		"include": "#keywords"
+	  },
+	  {
+		"include": "#strings"
+	  },
+	  {
+		"include": "#variables"
+	  },
+	  {
+		"include": "#classes"
+	  },
+	  {
+		"include": "#dataTypes"
+	  },
+	  {
+		"name": "meta.template.mustache",
+		"begin": "\\{\\{",
+		"end": "\\}\\}",
+		"patterns": [
+		  {
+			"name": "variable.mustache",
+			"match": "\\w+"
+		  }
+		  // You can define more patterns for sections, expressions, etc.
+		]
+	  }
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.mold",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.mold",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.mold",
-					"match": "\\\\."
-				}
-			]
-		}
+	  "keywords": {
+		"patterns": [
+		  {
+			"name": "keyword.control.mold",
+			"match": "\\b(if|while|for|return)\\b"
+		  },
+		  {
+			"name": "keyword.other.mold",
+			"match": "\\b(final|static|public|private)\\b"
+		  }
+		]
+	  },
+	  "strings": {
+		"name": "string.quoted.double.mold",
+		"begin": "\"",
+		"end": "\"",
+		"patterns": [
+		  {
+			"name": "constant.character.escape.mold",
+			"match": "\\\\."
+		  }
+		]
+	  },
+	  "variables": {
+		"patterns": [
+		  {
+			"name": "variable.mold",
+			"match": "\\{\\{\\w+\\}\\}"
+		  },
+		  {
+			"name": "variable.mold",
+			"match": "\\w+"
+		  }
+		]
+	  },
+	  "classes": {
+		"patterns": [
+		  {
+			"name": "entity.name.class.mold",
+			"match": "\\bclass\\s+\\w+\\b"
+		  }
+		]
+	  },
+	  "dataTypes": {
+		"patterns": [
+		  {
+			"name": "keyword.type.mold",
+			"match": "\\b(int|double|string|bool|List|Set|Map)\\b"
+		  }
+		]
+	  }
 	},
 	"scopeName": "source.molder"
-}
+  }

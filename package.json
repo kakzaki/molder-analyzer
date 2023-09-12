@@ -2,7 +2,7 @@
   "name": "molder-analyzer",
   "displayName": "Molder Analyzer",
   "description": "Syntax highlighting extension for Molder templates",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Zaki Mubarok (kakzaki.dev)",
   "publisher": "kakzaki", 
   "repository": "https://github.com/kakzaki/molder-analyzer",
