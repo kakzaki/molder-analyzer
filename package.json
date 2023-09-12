@@ -2,7 +2,7 @@
   "name": "molder-analyzer",
   "displayName": "Molder Analyzer",
   "description": "Syntax highlighting extension for Molder templates",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "author": "Zaki Mubarok (kakzaki.dev)",
   "publisher": "kakzaki", 
   "repository": "https://github.com/kakzaki/molder-analyzer",
@@ -13,16 +13,38 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "mold",
-      "aliases": ["Molder", "mold"],
-      "extensions": [".mold"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "mold",
-      "scopeName": "",
-      "path": "./syntaxes/mold.tmLanguage.json"
-    }]
-  }
+    "languages": [
+      {
+        "id": "mold",
+        "aliases": ["Molder", "mold"],
+        "extensions": [".mold"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mold",
+        "scopeName": "source.molder",
+        "path": "./syntaxes/mold.tmLanguage.json"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Molder Analyzer Configuration",
+      "properties": {
+        "molderAnalyzer.defaultColors": {
+          "type": "object",
+          "default": {
+            "keyword.control.mold": "#FF0000",
+            "variable.mold.content": "#007acc", 
+            "string.quoted.double.mold": "#00FF00", 
+            "entity.name.class.mold": "#FF00FF", 
+            "keyword.type.mold": "#0000FF", 
+            "constant.character.escape.mold": "#FFA500"
+          },
+          "description": "Default syntax highlighting colors for Molder Analyzer."
+        }
+      }
+    }
+  }  
 }
